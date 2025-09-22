@@ -1,23 +1,29 @@
 
-public class Pelicula {
+public abstract class Pelicula {
 
-	int eso;
+
+	String titulo;
+	int duracion;
+	int edad_minima;
+	
+	public Pelicula(String titulo,int duracion,int edad_minima) {
+		this.titulo = titulo;
+		this.duracion = duracion;
+		this.edad_minima = edad_minima;
+	}
 	
 	
 	
-	public Object getTitulo() {
-		// TODO Auto-generated method stub
-		return null;
+	public int getEdad_minima() {
+		return edad_minima;
 	}
 
-	public Object getEdadMinima() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	public void mostrarSinopsis() {
-		// TODO Auto-generated method stub
-		
-	}
+
+	public abstract String get_sinopsis();
+	
+	public abstract String get_descripcion();
+
+	
 
 }
