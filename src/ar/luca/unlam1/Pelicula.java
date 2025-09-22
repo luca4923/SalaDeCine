@@ -1,5 +1,7 @@
 package ar.luca.unlam1;
 
+import java.util.Objects;
+
 public abstract class Pelicula {
 
 
@@ -35,6 +37,29 @@ public abstract class Pelicula {
 	protected int getEdadMinima() {
 		return edad_minima;
 	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(duracion, edad_minima, titulo);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pelicula other = (Pelicula) obj;
+		return duracion == other.duracion && edad_minima == other.edad_minima && Objects.equals(titulo, other.titulo);
+	}
 	
 
+	
+	
 }

@@ -24,6 +24,8 @@ public class main {
 	        // Cargar las 10 películas por defecto
 	        cargarPeliculasDefault();
 	        
+	
+	        
 	        System.out.println("\n✅ Sistema inicializado correctamente!");
 	        System.out.println("Sala de " + filas + "x" + columnas + " creada exitosamente.");
 	        System.out.println("📽️  " + peliculas.length + " películas cargadas en el sistema.\n");
