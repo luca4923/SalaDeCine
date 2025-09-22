@@ -1,7 +1,8 @@
+package ar.luca.unlam1;
 
-public class PeliculaInfantil extends Pelicula {
+public class PeliculaTerror extends Pelicula {
 
-	public PeliculaInfantil(String titulo, int duracion, int edad_minima) {
+	public PeliculaTerror(String titulo, int duracion, int edad_minima) {
 		super(titulo, duracion, edad_minima);
 		// TODO Auto-generated constructor stub
 	}

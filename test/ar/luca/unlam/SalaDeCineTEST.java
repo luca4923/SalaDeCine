@@ -1,14 +1,14 @@
 package ar.luca.unlam;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+
+import ar.luca.unlam1.SalaCine;
 
 class SalaDeCineTEST {
 
 	@Test
 	void test() {
-		
+		SalaCine sala = new SalaCine(0,0);
 	}
 
 }

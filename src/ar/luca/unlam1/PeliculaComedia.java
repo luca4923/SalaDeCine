@@ -1,16 +1,16 @@
+package ar.luca.unlam1;
 
-public class PeliculaAccion extends Pelicula {
+public class PeliculaComedia extends Pelicula {
+	
+	String descripcion;
 
-	String descripcion = "";
-
-	public PeliculaAccion(String titulo, int duracion, int edad_minima) {
+	public PeliculaComedia(String titulo, int duracion, int edad_minima) {
 		super(titulo, duracion, edad_minima);
-		
 	}
 
 	@Override
 	public String get_sinopsis() {
-		return "Una pareja que cree tener la vida bajo control descubre que convivir trae caos, enredos y visitas inesperadas, pero también muchas risas.";
+		return null;
 	}
 
 	@Override
