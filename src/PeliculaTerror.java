@@ -1,8 +1,23 @@
 
 public class PeliculaTerror extends Pelicula {
 
-	public PeliculaTerror(String string, int i, int j) {
+	public PeliculaTerror(String titulo, int duracion, int edad_minima) {
+		super(titulo, duracion, edad_minima);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String get_sinopsis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String get_descripcion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }

@@ -1,43 +1,63 @@
 
 public class SalaCine {
 
+
+	Pelicula[] peliculas;
+	Butaca[][] Butacas;
+
 	public SalaCine(int filas, int columnas) {
-		// TODO Auto-generated constructor stub
+		Butacas = new Butaca[filas][columnas];
+		peliculas = new Pelicula[10];
 	}
 
-	public void mostrarButacas() {
-		// TODO Auto-generated method stub
-		
+	public void llenarButacas() {
+		for (int i = 0; i < Butacas.length; i++) {
+			for (int j = 0; j < Butacas[i].length; j++) {
+				Butacas[i][j] = new Butaca();
+			}
+		}
 	}
 
-	public void mostrarButacasDetalle() {
-		// TODO Auto-generated method stub
-		
+	public boolean agregar_pelicula(Pelicula pelicula) {
+		for (int i = 0; i < peliculas.length; i++) {
+			if (peliculas[i] == null) {
+				peliculas[i] = pelicula;
+				return true;
+			}
+		}
+		return false;
 	}
 
-	public void cambiarPelicula(Pelicula peliculaSeleccionada) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Object getPeliculaActual() {
-		// TODO Auto-generated method stub
+	public Pelicula getpelicula() {
+		for (int i = 0; i < peliculas.length; i++) {
+			if (peliculas[i] != null) {
+				return peliculas[i];
+			}
+		}
 		return null;
 	}
 
-	public boolean venderBoleto(int fila, int columna, int edad, String nombreComprador) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean ocupar_butaca(int fila, int columna, String nombre, int edad) {
+		if (edad < peliculas[0].getEdad_minima()) {
+			return false;
+		}
+
+		return Butacas[fila][columna].ocupar_Butaca(nombre);
 	}
 
-	public boolean liberarAsiento(int fila, int columna) {
-		// TODO Auto-generated method stub
-		return false;
+	public Butaca getButaca(int fila, int columna) {
+		return Butacas[fila][columna];
 	}
 
-	public void reiniciarSala() {
-		// TODO Auto-generated method stub
-		
+	public String grafica_De_Butacas() {
+
+		for (int i = 0; i < Butacas.length; i++) {
+			for (int j = 0; j < Butacas[i].length; j++) {
+				// Butacas[i][j].;
+
+			}
+		}
+		return null;
 	}
 
 
