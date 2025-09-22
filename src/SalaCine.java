@@ -1,13 +1,12 @@
 
 public class SalaCine {
 
-
 	Pelicula[] peliculas;
 	Butaca[][] Butacas;
 
 	public SalaCine(int filas, int columnas) {
 		Butacas = new Butaca[filas][columnas];
-		peliculas = new Pelicula[10];
+		peliculas = new Pelicula[100];
 	}
 
 	public void llenarButacas() {
@@ -37,7 +36,7 @@ public class SalaCine {
 		return null;
 	}
 
-	public boolean ocupar_butaca(int fila, int columna, String nombre, int edad) {
+	public boolean venderBoleto(int fila, int columna, String nombre, int edad) {
 		if (edad < peliculas[0].getEdad_minima()) {
 			return false;
 		}
@@ -49,16 +48,22 @@ public class SalaCine {
 		return Butacas[fila][columna];
 	}
 
-	public String grafica_De_Butacas() {
-
+	public String mostrarButacas() {
+		String grafico = "";
+		
 		for (int i = 0; i < Butacas.length; i++) {
 			for (int j = 0; j < Butacas[i].length; j++) {
-				// Butacas[i][j].;
+				
+				grafico += i + "X" + j + Butacas[i][j].toString()+ '\n' ;
 
 			}
 		}
-		return null;
+		return grafico;
 	}
 
+	////// HACER!!!!
+	public void cambiarPelicula(Pelicula peliculaSeleccionada) {
+
+	}
 
 }

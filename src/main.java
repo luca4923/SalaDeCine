@@ -127,7 +127,7 @@ public class main {
 	        if (opcion >= 1 && opcion <= 10) {
 	            Pelicula peliculaSeleccionada = peliculas[opcion - 1];
 	            sala.cambiarPelicula(peliculaSeleccionada);
-	            peliculaSeleccionada.mostrarSinopsis();
+	            peliculaSeleccionada.get_sinopsis();
 	        } else if (opcion == 11) {
 	            if (sala.getPeliculaActual() != null) {
 	                sala.getPeliculaActual().mostrarSinopsis();
@@ -171,7 +171,7 @@ public class main {
 	        System.out.print("Ingrese la edad del cliente: ");
 	        int edad = scanner.nextInt();
 	        
-	        boolean exito = sala.venderBoleto(fila, columna, edad, nombreComprador);
+	        boolean exito = sala.venderBoleto(fila, columna, nombreComprador,edad);
 	        
 	        if (exito) {
 	            System.out.println("🎉 ¡Boleto vendido exitosamente!");

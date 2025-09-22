@@ -24,6 +24,16 @@ public abstract class Pelicula {
 	
 	public abstract String get_descripcion();
 
+
+
+	protected String getTitulo() {
+		return titulo;
+	}
+
+
+	protected int getEdadMinima() {
+		return edad_minima;
+	}
 	
 
 }
