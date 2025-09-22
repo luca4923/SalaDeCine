@@ -20,6 +20,17 @@ public class Butaca {
 	public boolean estadoDeLaButaca() {
 		return ocupada;
 	}
+
+	@Override
+	public String toString() {
+		return "Butaca [ocupada=" + ocupada + "]";
+	}
+
+	public void liberarButaca() {
+		nombre_del_ocupante = "";
+		ocupada = false ;
+		
+	}
 	
 	
 }

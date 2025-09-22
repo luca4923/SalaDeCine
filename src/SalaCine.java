@@ -66,4 +66,25 @@ public class SalaCine {
 
 	}
 
+	public boolean liberarAsiento(int fila, int columna) {
+		for (int i = 0; i < Butacas.length; i++) {
+			for (int j = 0; j < Butacas[i].length; j++) {
+				if(Butacas[i][j].estadoDeLaButaca() == false) {
+					Butacas[i][j].liberarButaca();
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	public void reiniciarSala() {
+		for(int i = 0; i<Butacas.length;i++) {
+			for(int j = 0;j<Butacas[i].length;j++) {
+				Butacas[i][j].liberarButaca();
+			}
+		}
+		
+	}
+
 }

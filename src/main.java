@@ -129,8 +129,8 @@ public class main {
 	            sala.cambiarPelicula(peliculaSeleccionada);
 	            peliculaSeleccionada.get_sinopsis();
 	        } else if (opcion == 11) {
-	            if (sala.getPeliculaActual() != null) {
-	                sala.getPeliculaActual().mostrarSinopsis();
+	            if (sala.getpelicula() != null) {
+	                sala.getpelicula().get_sinopsis();
 	            } else {
 	                System.out.println("❌ No hay película en cartelera actualmente.");
 	            }
@@ -149,14 +149,14 @@ public class main {
 	    }
 	    
 	    private static void venderBoleto() {
-	        if (sala.getPeliculaActual() == null) {
+	        if (sala.getpelicula() == null) {
 	            System.out.println("❌ No hay película en cartelera. Primero seleccione una película.");
 	            return;
 	        }
 	        
 	        System.out.println("\n🎫 VENTA DE BOLETOS");
-	        System.out.println("Película actual: " + sala.getPeliculaActual().getTitulo());
-	        System.out.println("Edad mínima requerida: " + sala.getPeliculaActual().getEdadMinima() + " años");
+	        System.out.println("Película actual: " + sala.getpelicula().getTitulo());
+	        System.out.println("Edad mínima requerida: " + sala.getpelicula().getEdadMinima() + " años");
 	        
 	        sala.mostrarButacas();
 	        
@@ -199,9 +199,9 @@ public class main {
 	    }
 	    
 	    private static void mostrarInfoPelicula() {
-	        if (sala.getPeliculaActual() != null) {
+	        if (sala.getpelicula() != null) {
 	            System.out.println("\n📋 INFORMACIÓN DE LA PELÍCULA ACTUAL");
-	            sala.getPeliculaActual().mostrarSinopsis();
+	            sala.getpelicula().get_sinopsis();
 	        } else {
 	            System.out.println("❌ No hay película en cartelera actualmente.");
 	        }
