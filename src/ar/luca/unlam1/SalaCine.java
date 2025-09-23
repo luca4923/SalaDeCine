@@ -16,11 +16,11 @@ public class SalaCine {
 	}
 
 	public boolean agregar_pelicula(Pelicula pelicula) {
-		if(peliculas == null) {
+		if (peliculas == null) {
 			peliculas = pelicula;
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -34,8 +34,8 @@ public class SalaCine {
 	public boolean venderBoleto(int fila, int columna, String nombre, int edad) {
 		if (edad < peliculas.getEdad_minima()) {
 			return false;
-		} 
-		if(Butacas[fila][columna].estadoDeLaButaca()) {
+		}
+		if (Butacas[fila][columna].estadoDeLaButaca()) {
 			return false;
 		}
 
@@ -59,10 +59,9 @@ public class SalaCine {
 		return grafico;
 	}
 
-	////// HACER!!!!
 	public boolean cambiarPelicula(Pelicula peliculaSeleccionada) {
-		if(peliculas != null) {
-			peliculas = peliculaSeleccionada; 
+		if (peliculas != null) {
+			peliculas = peliculaSeleccionada;
 			return true;
 		}
 		return false;
@@ -88,5 +87,9 @@ public class SalaCine {
 		}
 
 	}
+	
+	
+	
+	
 
 }

@@ -69,6 +69,19 @@ class SalaDeCineTEST {
 		assertFalse(sala.venderBoleto(1, 1, "luca", 15));
 	}
 	
+	@Test
+	void vaciarAsientoVendido() {
+		SalaCine sala = new SalaCine(2, 2);
+		Pelicula peli1 = new PeliculaComedia("muchachos de barrio", 100, 16);
+		sala.agregar_pelicula(peli1);
+
+		sala.venderBoleto(1, 1, "luca", 15);
+		
+		//assertTrue(sala.liberarAsiento(1, 1));
+		
+		assertFalse(sala.getButaca(1, 1).estadoDeLaButaca());
+	}
+	
 	
 
 }
