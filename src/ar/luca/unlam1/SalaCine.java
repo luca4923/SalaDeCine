@@ -25,10 +25,8 @@ public class SalaCine {
 	}
 
 	public Pelicula getpelicula() {
-		if (peliculas != null) {
 			return peliculas;
-		}
-		return null;
+
 	}
 
 	public boolean venderBoleto(int fila, int columna, String nombre, int edad) {
@@ -84,15 +82,11 @@ public class SalaCine {
 	}
 
 	public boolean liberarAsiento(int fila, int columna) {
-		for (int i = 0; i < Butacas.length; i++) {
-			for (int j = 0; j < Butacas[i].length; j++) {
-				if (Butacas[i][j].estadoDeLaButaca() == false) {
-					Butacas[i][j].liberarButaca();
+		if(Butacas[fila][columna] != null) {
+					Butacas[fila][columna].liberarButaca();
 					return true;
-				}
-			}
 		}
-		return false;
+		return false;	
 	}
 
 	public void reiniciarSala() {
