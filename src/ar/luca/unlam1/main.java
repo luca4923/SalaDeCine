@@ -5,7 +5,7 @@ public class main {
 	
 	    private static Scanner scanner = new Scanner(System.in);
 	    private static SalaCine sala;
-	    private static Pelicula[] peliculas = new Pelicula[100];
+	    private static Pelicula[] peliculas = new Pelicula[10];
 	    
 	    public static void main(String[] args) {
 	        inicializarSistema();
@@ -90,7 +90,7 @@ public class main {
 	                    mostrarInfoPelicula();
 	                    break;
 	                case 6:
-	                    sala.mostrarButacasDetalle();
+	                    //sala.mostrarButacasDetalle();
 	                    break;
 	                case 7:
 	                    reiniciarSala();

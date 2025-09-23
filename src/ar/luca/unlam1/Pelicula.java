@@ -34,6 +34,12 @@ public abstract class Pelicula {
 	}
 
 
+	public int getDuracion() {
+		return duracion;
+	}
+
+
+
 	protected int getEdadMinima() {
 		return edad_minima;
 	}

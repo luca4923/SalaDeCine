@@ -2,7 +2,7 @@ package ar.luca.unlam1;
 
 public class SalaCine {
 
-	Pelicula peliculas = null;
+	Pelicula peliculas;
 	Butaca[][] Butacas;
 
 	public SalaCine(int filas, int columnas) {
@@ -45,6 +45,10 @@ public class SalaCine {
 	public Butaca getButaca(int fila, int columna) {
 		return Butacas[fila][columna];
 	}
+	
+	public Butaca[][] getButacas() {
+		return Butacas;
+	}
 
 	public String mostrarButacas() {
 		String grafico = "";
@@ -60,11 +64,23 @@ public class SalaCine {
 	}
 
 	public boolean cambiarPelicula(Pelicula peliculaSeleccionada) {
-		if (peliculas != null) {
+		if(peliculaSeleccionada != null) {
 			peliculas = peliculaSeleccionada;
 			return true;
 		}
 		return false;
+	}
+	
+	public int contarAsientosOcupados() {
+		int contador = 0;
+		for (int i = 0; i < Butacas.length; i++) {
+			for (int j = 0; j < Butacas[i].length; j++) {
+				if(this.Butacas[i][j].estadoDeLaButaca())
+					contador++;
+				
+			}
+		}
+		return contador;
 	}
 
 	public boolean liberarAsiento(int fila, int columna) {

@@ -10,7 +10,13 @@ public class PeliculaComedia extends Pelicula {
 
 	@Override
 	public String get_sinopsis() {
-		return null;
+		String sinopsis = "Sinopsis de pelicula de accion"+ '\n';
+		sinopsis += "Titulo: " + super.getTitulo() + '\n';
+		sinopsis += "Duración en minutos: " + super.getDuracion() + '\n';
+		sinopsis += "Edad Minima: " + super.getEdadMinima()  + '\n';
+		sinopsis += "Las peliculas de accion se caracterizan por tener un alto grado de violancia, explosibos impresionantes y heroes que salvan al mundo.";
+		return sinopsis;
+		
 	}
 
 	@Override
