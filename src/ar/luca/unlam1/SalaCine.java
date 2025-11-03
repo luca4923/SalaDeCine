@@ -1,18 +1,19 @@
 package ar.luca.unlam1;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+
 
 public class SalaCine {
 
 	Pelicula peliculas;
-	Butaca[][] Butacas;
+	Map <String,Butaca> Butacas ;
 
 	public SalaCine(int filas, int columnas) {
-		Butacas = new Butaca[filas][columnas];
-
-		for (int i = 0; i < Butacas.length; i++) {
-			for (int j = 0; j < Butacas[i].length; j++) {
-				Butacas[i][j] = new Butaca();
-			}
-		}
+		Butacas = new HashMap<String,Butaca>();
+	
 	}
 
 	public boolean agregar_pelicula(Pelicula pelicula) {
@@ -30,34 +31,44 @@ public class SalaCine {
 	}
 
 	public boolean venderBoleto(int fila, int columna, String nombre, int edad) {
-		if (edad < peliculas.getEdad_minima()) {
+		String nmrButaca = "" ;
+		nmrButaca += fila ;
+		nmrButaca += columna ;
+		
+		if(edad < peliculas.getEdad_minima()) {
 			return false;
 		}
-		if (Butacas[fila][columna].estadoDeLaButaca()) {
+		
+		Butaca butaca = new Butaca(nombre);
+		
+		if(Butacas.get(nmrButaca) != null) {
 			return false;
+		} else {
+			Butacas.put(nmrButaca, butaca);
+			return true;
 		}
-
-		return Butacas[fila][columna].ocupar_Butaca(nombre);
 	}
 
 	public Butaca getButaca(int fila, int columna) {
-		return Butacas[fila][columna];
+		String nmrButaca = "" ;
+		nmrButaca += fila ;
+		nmrButaca += columna ;
+		return Butacas.get(nmrButaca);
 	}
 	
-	public Butaca[][] getButacas() {
-		return Butacas;
+	public List<Butaca> getButacas() {
+		List <Butaca>Lista = new LinkedList<>(Butacas.values());
+		return Lista;
 	}
 
 	public String mostrarButacas() {
 		String grafico = "";
-
-		for (int i = 0; i < Butacas.length; i++) {
-			for (int j = 0; j < Butacas[i].length; j++) {
-
-				grafico += i + "X" + j + Butacas[i][j].toString() + '\n';
-
-			}
+		
+		List <Butaca>Lista = new LinkedList<>(Butacas.values());
+		for(Butaca l : Lista) {
+			grafico = grafico + l.toString() + "\n";
 		}
+		
 		return grafico;
 	}
 
@@ -69,33 +80,25 @@ public class SalaCine {
 		return false;
 	}
 	
-	public int contarAsientosOcupados() {
-		int contador = 0;
-		for (int i = 0; i < Butacas.length; i++) {
-			for (int j = 0; j < Butacas[i].length; j++) {
-				if(this.Butacas[i][j].estadoDeLaButaca())
-					contador++;
-				
-			}
-		}
+	public Integer contarAsientosOcupados() {
+		Integer contador = Butacas.size();
 		return contador;
 	}
 
-	public boolean liberarAsiento(int fila, int columna) {
-		if(Butacas[fila][columna] != null) {
-					Butacas[fila][columna].liberarButaca();
-					return true;
+	public Boolean liberarAsiento(int fila, int columna) {
+		String nmrButaca = "" ;
+		nmrButaca += fila ;
+		nmrButaca += columna ; 
+		
+		if(Butacas.containsKey(nmrButaca)) {
+			Butacas.remove(nmrButaca);
+			return true;
 		}
 		return false;	
 	}
 
 	public void reiniciarSala() {
-		for (int i = 0; i < Butacas.length; i++) {
-			for (int j = 0; j < Butacas[i].length; j++) {
-				Butacas[i][j].liberarButaca();
-			}
-		}
-
+		Butacas.clear();
 	}
 	
 	
