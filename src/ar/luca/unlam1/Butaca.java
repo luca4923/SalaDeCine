@@ -2,10 +2,11 @@ package ar.luca.unlam1;
 
 public class Butaca {
 
-	Boolean ocupada;
-	String nombre_del_ocupante;
+	private Boolean ocupada;
+	private String nombre_del_ocupante;
 
-	public Butaca() {
+	public Butaca(String nombre) {
+		nombre_del_ocupante =  nombre;
 		ocupada = false;
 	}
 
@@ -18,9 +19,6 @@ public class Butaca {
 		return false;
 	}
 	
-	public boolean estadoDeLaButaca() {
-		return ocupada;
-	}
 
 	@Override
 	public String toString() {
@@ -28,7 +26,7 @@ public class Butaca {
 	}
 
 	public void liberarButaca() {
-		nombre_del_ocupante = "";
+		nombre_del_ocupante = null;
 		ocupada = false ;
 		
 	}
